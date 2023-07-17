@@ -1,5 +1,5 @@
 student = set([])
-report = set({})
+report = set([])
 
 for i in range(30):
     student.add(i+1)

@@ -1,11 +1,5 @@
-a,b = map(list,input().split())
-a.reverse()
-b.reverse()
+a,b = input().split()
+a = int(a[::-1]) # [::-1] : 역순
+b = int(b[::-1])
 
-astr = ''.join(a)
-bstr = ''.join(b)
-
-if int(astr) > int(bstr):
-    print(int(astr))
-else:
-    print(int(bstr))
+print(a) if a > b else print(b)

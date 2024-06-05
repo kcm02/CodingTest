@@ -1,10 +1,2 @@
 def solution(ineq, eq, n, m):
-    if ineq == ">" and eq == "=":
-        return int(n>=m)
-    elif ineq == "<" and eq == "=":
-        return int(n<=m)
-    elif ineq == ">" and eq == "!":
-        return int(n>m)
-    else:
-        return int(n<m)
-    return answer
+    return int(eval(str(n)+ineq+eq.replace('!', '')+str(m)))

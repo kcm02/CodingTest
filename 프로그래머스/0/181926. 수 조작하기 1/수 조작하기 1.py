@@ -1,11 +1,6 @@
 def solution(n, control):
-    for con in control:
-        if con == "w":
-            n += 1
-        elif con == "s":
-            n -= 1
-        elif con == "d":
-            n += 10
-        elif con == "a":
-            n -= 10
-    return n
+    answer = n
+    c = { 'w':1, 's':-1, 'd':10, 'a':-10}
+    for i in control:
+        answer += c[i]
+    return answer

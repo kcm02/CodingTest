@@ -1,5 +1,4 @@
 def solution(arr, qrs):
-    for row in qrs: # [i,j]
-        i, j = row[0], row[1]
-        arr[i],arr[j] = arr[j],arr[i]
+    for row in qrs:
+        arr[row[0]],arr[row[1]] = arr[row[1]],arr[row[0]]
     return arr

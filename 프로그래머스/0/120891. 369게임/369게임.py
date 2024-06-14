@@ -1,2 +1,2 @@
 def solution(order):
-    return len([x for x in str(order) if int(x) in (3,6,9)])
+    return sum(1 for x in str(order) if x in '369')

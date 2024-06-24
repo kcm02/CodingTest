@@ -1,18 +1,13 @@
 def solution(N, stages):
-    challenger = [0] * (N + 2)
-    for stage in stages:
-        challenger[stage] += 1
-    
-    fails = {}
-    total = len(stages)
-    
-    for i in range(1, N + 1):
-        if challenger[i] == 0:
-            fails[i] = 0
+    failure_rates = []
+
+    for stage in range(1, N + 1):
+        current_users = len([s for s in stages if s >= stage])
+        if current_users == 0:
+            failure_rate = 0
         else:
-            fails[i] = challenger[i] / total
-            total -= challenger[i]
+            failure_rate = stages.count(stage) / current_users
+        failure_rates.append((stage, failure_rate))
     
-    result = sorted(fails, key=lambda x: fails[x], reverse=True)
-    
-    return result
+    failure_rates.sort(key=lambda x: (-x[1], x[0]))
+    return [stage for stage, _ in failure_rates]

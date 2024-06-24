@@ -1,13 +1,12 @@
-def solution(string):
+def solution(s):
     stack = []
     
-    for s in string:
-        try:
-            if s == "(":
-                stack.append(s)
-            else:
-                stack.pop()
-        except:
-            return False
+    for char in s:
+        if char == '(':
+            stack.append(char)
+        else:
+            if not stack:
+                return False
+            stack.pop()
     
-    return not(len(stack))
+    return len(stack) == 0

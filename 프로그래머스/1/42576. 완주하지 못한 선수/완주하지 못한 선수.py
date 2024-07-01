@@ -14,4 +14,4 @@ def solution(participant, completion):
         if hash_table[name] > 0:
             return name
         
-    return null
+    return None

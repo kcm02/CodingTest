@@ -1,11 +1,8 @@
 def solution(genres, plays):
     answer = []
-    music = {}
     total = {}
     
     for i in range(len(genres)):
-        music[i] = plays[i]
-        
         if genres[i] in total:
             total[genres[i]].append((i, plays[i]))
         else:

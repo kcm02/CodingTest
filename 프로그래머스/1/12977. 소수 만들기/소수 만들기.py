@@ -7,8 +7,7 @@ def is_prime(n):
 
 def solution(nums):
     result = 0
-    comb = list(combinations(nums,3))
-    for i in comb:
-        if is_prime(sum(i)) == True:
+    for comb in combinations(nums, 3):
+        if is_prime(sum(comb)):
             result += 1
     return result

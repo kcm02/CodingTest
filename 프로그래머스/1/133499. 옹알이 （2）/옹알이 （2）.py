@@ -3,8 +3,7 @@ def solution(babbling):
     for i in babbling:
         for j in ['aya','ye','woo','ma']:
             if j*2 not in i:
-                i=i.replace(j,' ')
-                
+                i=i.replace(j,' ')     
         if len(i.strip())==0:
             answer +=1
     return answer

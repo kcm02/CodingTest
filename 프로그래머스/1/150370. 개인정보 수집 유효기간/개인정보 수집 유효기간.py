@@ -1,30 +1,12 @@
-from datetime import datetime
+def to_days(date):
+    year, month, day = map(int, date.split("."))
+    return year * 28 * 12 + month * 28 + day
 
 def solution(today, terms, privacies):
-    expiry = {term[0]: int(term[2:]) for term in terms}
-    answer = []
-    today = datetime.strptime(today, "%Y.%m.%d")
-    
-    for i, privacy in enumerate(privacies):
-        exp_MM = expiry[privacy[-1]]
-        YYYY, MM, DD = map(int, privacy[:-2].split("."))
-        
-        MM += exp_MM
-        if MM > 12:
-            YYYY += (MM - 1) // 12
-            MM = (MM - 1) % 12 + 1
-        
-        DD -= 1
-        if DD == 0:
-            DD = 28
-            MM -= 1
-            if MM == 0:
-                MM = 12
-                YYYY -= 1
-        
-        date_p = datetime(YYYY, MM, DD)
-        
-        if date_p < today:
-            answer.append(i + 1)
-    
-    return answer
+    months = {v[0]: int(v[2:]) * 28 for v in terms}
+    today = to_days(today)
+    expire = [
+        i + 1 for i, privacy in enumerate(privacies)
+        if to_days(privacy[:-2]) + months[privacy[-1]] <= today
+    ]
+    return expire

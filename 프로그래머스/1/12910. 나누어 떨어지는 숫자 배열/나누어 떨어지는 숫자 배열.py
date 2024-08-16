@@ -1,3 +1,3 @@
 def solution(arr, divisor):
-    result = [i for i in arr if i % divisor == 0]
-    return sorted(result) if result else [-1]
+    result = sorted(i for i in arr if not i % divisor)
+    return result if result else [-1]

@@ -1,2 +1,2 @@
 def solution(absolutes, signs):
-    return sum(absolutes[i] if signs[i] else -absolutes[i] for i in range(len(signs)))
+    return sum(x if signs[i] else -x for i,x in enumerate(absolutes))

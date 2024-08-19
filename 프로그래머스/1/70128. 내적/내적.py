@@ -1,2 +1,1 @@
-def solution(a, b):
-    return sum(a[i]*b[i] for i in range(len(a)))
+solution = lambda a,b: sum(c*d for c,d in zip(a,b))

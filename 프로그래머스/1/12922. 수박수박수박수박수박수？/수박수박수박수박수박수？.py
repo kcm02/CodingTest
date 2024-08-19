@@ -1,2 +1,1 @@
-def solution(n):
-    return ("수박"*n)[:n]
+solution = lambda x: ("수박"*x)[:x]

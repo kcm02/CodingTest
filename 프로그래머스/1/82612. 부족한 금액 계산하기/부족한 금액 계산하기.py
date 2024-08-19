@@ -1,5 +1,5 @@
 def solution(price, money, count):
+    total = 0
     for i in range(1,count+1):
-        money -= price * i
-
-    return -money if money < 0 else 0
+        total += i * price
+    return total - money if (total - money) > 0 else 0

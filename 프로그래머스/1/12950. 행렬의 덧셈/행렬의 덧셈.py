@@ -1,3 +1,1 @@
-def solution(A, B):
-    answer = [[c + d for c, d in zip(a,b)] for a, b in zip(A,B)]
-    return answer
+solution = lambda arr1, arr2: [[c+d for c,d in zip(a,b)] for a,b in zip(arr1,arr2)]

@@ -1,1 +1,1 @@
-solution = lambda x: len(x) in [4,6] and x.isdigit()
+solution = lambda x: len(x) in (4,6) and x.isdigit()

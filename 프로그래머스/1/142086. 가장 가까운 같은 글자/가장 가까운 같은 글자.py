@@ -1,12 +1,8 @@
 def solution(s):
-    answer = []
-    last_seen = {}
-    
-    for i, char in enumerate(s):
-        if char in last_seen:
-            answer.append(i - last_seen[char])
+    answer = [-1]
+    for i in range(1,len(s)):
+        if s[:i].rfind(s[i]) != -1:
+            answer.append(i-s[:i].rfind(s[i]))
         else:
             answer.append(-1)
-        last_seen[char] = i
-    
     return answer

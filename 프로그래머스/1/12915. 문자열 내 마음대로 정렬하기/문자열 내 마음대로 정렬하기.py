@@ -1,1 +1,1 @@
-solution = lambda x, n: sorted(x, key=lambda item: (item[n],item))
+solution = lambda s, n: sorted(s, key=lambda x: (x[n],x))

@@ -1,2 +1,1 @@
-def solution(strings, n):
-    return sorted(strings, key=lambda x: (x[n],x))
+solution = lambda x, n: sorted(x, key=lambda item: (item[n],item))

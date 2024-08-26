@@ -1,17 +1,13 @@
 def solution(participant, completion):
-    hash_table = {}
+    name_count = {}
     
     for name in participant:
-        if name in hash_table:
-            hash_table[name] += 1
+        if name in name_count:
+            name_count[name] += 1
         else:
-            hash_table[name] = 1
-        
+            name_count[name] = 1
+    
     for name in completion:
-        hash_table[name] -= 1
-        
-    for name in participant:
-        if hash_table[name] > 0:
-            return name
-        
-    return null
+        name_count[name] -= 1
+    
+    return "".join(k for k,v in name_count.items() if v > 0)

@@ -1,2 +1,2 @@
 def solution(nums):
-    return min(len(nums)/2, len(set(nums)))
+    return len(nums)/2 if len(list(set(nums))) > len(nums)/2 else len(list(set(nums)))

@@ -1,14 +1,14 @@
 n = int(input())
-fruits = [input().split(' ') for _ in range(n)]
-money, grams = 0, 0
+m, g = 0, 0
 
 for i in range(n):
-    if fruits[i][0] == 'A':
-        apple = (int(fruits[i][1]) // 12) * (int(fruits[i][2]) // 12) * (int(fruits[i][3]) // 12)
-        money += apple * 4000
-        grams += 1000 + (apple * 500)
+    f, w, h, l = input().split(' ')
+    if f == 'A':
+        a = (int(w) // 12) * (int(h) // 12) * (int(l) // 12)
+        m += a * 4000
+        g += 1000 + (a * 500)
     else:
-        grams += 6000
-
-print(grams)
-print(money)
+        g += 6000
+        
+print(g)
+print(m)

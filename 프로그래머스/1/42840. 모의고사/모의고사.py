@@ -12,8 +12,7 @@ def solution(answers):
             pattern = patterns[j]
             if x == pattern[i % len(pattern)]:
                 count[j] += 1
-    
+                
     max_score = max(count)
     highest_scores = [i+1 for i, x in enumerate(count) if x == max_score]
-            
     return highest_scores

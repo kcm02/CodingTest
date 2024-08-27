@@ -1,13 +1,12 @@
 def solution(k, score):
-    honor = []
+    honors = []
     answer = []
-    
-    for i in score:
-        if len(honor) >= k:
-            if i > min(honor):
-                del honor[honor.index(min(honor))]
-                honor.append(i)
+    for s in score:
+        if len(honors) >= k:           
+            if s > min(honors):
+                honors.remove(min(honors))
+                honors.append(s)
         else:
-            honor.append(i)
-        answer.append(min(honor))
+            honors.append(s)
+        answer.append(min(honors))
     return answer

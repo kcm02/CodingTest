@@ -1,11 +1,3 @@
 def solution(name, yearning, photo):
     score = {n:y for n,y in zip(name,yearning)}
-    result = []
-    for persons in photo:
-        count = 0
-        for person in persons:
-            if person not in score:
-                continue
-            count += score[person]
-        result.append(count)
-    return result
+    return [sum(score[j] for j in i if j in score) for i in photo]

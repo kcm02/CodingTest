@@ -1,10 +1,9 @@
 l = int(input())
 s = input()
-n = 0
+m = 1234567891
 sum = 0
 
-for i,x in enumerate(s):
-    sum += (ord(x)-96) * (31 ** n)
-    n += 1
+for i, x in enumerate(s):
+    sum = (sum + (ord(x) - 96) * (31 ** i % m)) % m
 
 print(sum)
